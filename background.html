@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpudlishing</title>
+
+    <!--css파일 연결-->
+    <link rel="stylesheet" href="../css/commen.css">
+
+</head>
+
+<body>
+
+  <div class="section">
+    <img src="../img/onetwotree.png" width="1500">
+  </div>
+
+  <div class="text-overlay">
+    <h1>
+      배<br>
+      송<br>
+      중...
+    </h1>
+
+    <div class="bottom-text">
+      하루가<br>도착합니다.
+    </div>
+  </div>
+
+  <div class="middle-text">
+    주문하시겠습니까?
+  </div>
+  </div>
+
+  <div class="order-button">
+  <button class="order-btn" id="orderBtn">
+    <span class="default-text">주문하기</span>
+    <span class="clicked-text">  ✔  </span>
+  </button>
+  </div>
+
+  <script>
+    const btn = document.getElementById('orderBtn');
+    const defaultText = btn.querySelector('.default-text');
+    const clickedText = btn.querySelector('.clicked-text');
+  
+    btn.addEventListener('click', () => {
+      // 텍스트 전환
+      defaultText.style.opacity = '0';
+      defaultText.style.transform = 'translate(-50%, -150%)';
+      clickedText.style.opacity = '1';
+      clickedText.style.transform = 'translate(-50%, -50%)';
+    });
+  </script>
+
+  <div class="tracking-container">
+   <div class="tracking-box">
+     <img src="../img/search-icon.svg" width="45" height="45">
+     <span class="text">배송조회<span class="cursor">_</span></span>
+   </div>
+  </div>
+
+  <div class="info-box">
+  운송장 번호 - <span class="thin">202413542</span>
+  </div>
+
+  <div class="info-box small">
+  받는 분 - 최예나
+  </div>
+
+
+  <div class="timeline">
+   <div class="step">
+    <div class="icon">✔</div>
+    <div class="solid-line"></div>
+    <div class="line"></div>
+    <div class="content">
+      <h2>주문 접수 완료 <span>(5:00)</span></h2>
+      <div class="bubble left">아침식사</div>
+      <div class="bubble right">알람듣고 일어나기</div>
+      <img src="../img/box.svg" width="230" height="230">
+    </div>
+   </div>
+  </div>
+
+  <div class="dots">
+   <span>.</span>
+   <span>.</span>
+   <span>.</span>
+  </div>
+
+  <div class="image-container">
+    <img src="../img/mg1.jpg">
+    <img src="../img/mg2.jpg">
+    <img src="../img/mg3.jpg">
+  </div>
+
+ <div class="time2line">
+   <div class="step2">
+     <div class="icon2">✔</div>
+     <div class="solid-line2"></div>
+     <div class="line2"></div>
+     <div class="content2">
+       <h2>상품 포장 중 <span>(6:30)</span></h2>
+       <div class="bubble2 left">세수</div>
+       <div class="bubble2 right">옷 갈아입기</div>
+       <div class="bubble2 right2">스케줄 표 / 할 일 메모지</div>
+       <img src="../img/box22.svg" width="230" height="230">
+     </div>
+   </div>
+ </div>
+
+  <div class="dots2">
+   <span>.</span>
+   <span>.</span>
+   <span>.</span>
+  </div>
+
+  <div class="image-container2">
+   <img src="../img/mg1_1.jpeg">
+   <img src="../img/mg1_2.jpeg">
+   <img src="../img/mg1_3.jpeg">
+   <img src="../img/mg1_4.jpeg">
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="section">
+    <div class="status">
+      <div class="text">배송 출발 (8:40)</div>
+    </div>
+  </div>
+  <div class="step3">
+   <div class="icon3">✔</div>
+  </div>
+
+  <div class="delivery-line">
+    <img src="../img/box333.svg" class="box333-img" width="190" height="190">
+
+    <div class="truck-group">
+      <img src="../img/truk.svg" class="truck-img" width="310" height="310">
+      <div class="school">(SCHOOL)</div>
+    </div>
+
+    <div class="dots3">. . .</div>
+  </div>
+
+  <div class="image-stack">
+    <div class="img-wrapper">
+      <img src="../img/subway.jpeg" alt="subway">
+    </div>
+    <div class="img-wrapper second">
+      <img src="../img/school.jpeg" alt="school">
+    </div>
+  </div>
+
+  <div class="time4line">
+    <div class="step4">
+     <div class="icon4">−</div>
+     <div class="solid-line4"></div>
+     <div class="line4"></div>
+     <div class="content4">
+       <h2>배송지연 <span>(1:00)</span></h2>
+       <div class="bubble4 left blink">점심밥</div>
+       <div class="bubble4 right blink">수업/과제</div>
+       <img src="../img/box4444.svg" width="190" height="190">
+     </div>
+    </div>
+   </div>
+ 
+   <div class="dots4">
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+   </div>
+
+   <div class="circle-stack">
+    <div class="circle"><span>−</span></div>
+    <div class="circle smaller"><span>−</span></div>
+    <div class="circle small"><span>−</span></div>
+    <div class="circle smallest"><span>−</span></div>
+  </div>
+
+  <div class="spacer5"></div>
+
+  <div class="section5">
+    <div class="status5">
+      <div class="text5">배송 중 (4:10)</div>
+    </div>
+  </div>
+  <div class="step5">
+   <div class="icon5">✔</div>
+  </div>
+
+  <div class="delivery-line">
+    <img src="../img/box55555.svg" class="box55555-img" width="190" height="190">
+
+    <div class="truck-group5">
+      <img src="../img/truk5.svg" class="truck5-img" width="310" height="310">
+      <div class="home5">(HOME)</div>
+    </div>
+
+    <div class="dots5">. . .</div>
+  </div>
+
+  <div class="image-stack5">
+    <div class="img-wrapper5">
+      <img src="../img/subway5.jpeg" >
+    </div>
+    <div class="img-wrapper5 second">
+      <img src="../img/home5.jpeg" >
+    </div>
+  </div>
+
+  <div class="arriving-soon">"곧 도착 예정..."</div>
+
+  <div class="spacer6"></div>
+
+  <div class="section6">
+    <div class="status6">
+      <div class="text6">배송 완료 (7:00)</div>
+    </div>
+  </div>
+  <div class="step6">
+   <div class="icon6">✔</div>
+  </div>
+
+  <div class="delivery-line6">
+      <div class="bubble6 left blink">저녁식사</div>
+      <div class="bubble6 right blink">취미활동</div>
+    <img src="../img/box666666.svg" class="box666666-img" width="600" height="600">
+  </div>
+
+  <div class="dots6">
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+   </div>
+
+   <div class="delivery-line7">
+    <div class="bubble7 left blink">목욕</div>
+    <div class="bubble7 right blink">과제</div>
+    <div class="bubble7 right2 blink">스트레칭/운동</div>
+</div>
+
+<div class="dots7">
+  <span>.</span>
+  <span>.</span>
+  <span>.</span>
+ </div>
+
+ <div class="image-container8">
+  <img src="../img/mg2_1.jpeg">
+  <img src="../img/mg2_2.jpeg">
+  <img src="../img/mg2_3.jpeg">
+  <img src="../img/mg2_4.jpeg">
+ </div>
+
+ <div class="spacer9"></div>
+
+ <div class="section9">
+   <div class="status9">
+     <div class="text9">반품 접수 (11:00)</div>
+   </div>
+ </div>
+ <div class="step9">
+  <div class="icon9">✔</div>
+ </div>
+
+ <div class="delivery-line9">
+     <div class="bubble9 left blink">휴식</div>
+     <div class="bubble9 right blink">다음날 일정체크</div>
+     <div class="bubble9 right2 blink">꿈나라</div>
+ </div>
+ 
+ <div class="img-container9">
+   <img src="../img/box7777777.svg" class="box7777777-img" width="490" height="490">
+  </div>
+
+ <div class="dots9">
+   <span>.</span>
+   <span>.</span>
+   <span>.</span>
+  </div>
+
+  <div class="image-container9">
+    <img src="../img/mg3_1.jpeg">
+    <img src="../img/mg3_2.jpeg">
+    <img src="../img/mg3_3.jpeg">
+  </div>
+
+  <div class="return-section10">
+    <div class="return-text10">
+      <p>반<br>품<br>접<br>수<br>중</p>
+      <p class="dots10">•<br>•<br>•</p>
+      <p class="complete10">- 반품 완료 -</p>
+      <p class="complete11">“ 내일 다시 주문해주세요. ”</p>
+    </div>
+    <p class="footer10">_DIGITAL MEDIA DESIGN_</p>
+  </div>
+   
+</body>
+</html>
