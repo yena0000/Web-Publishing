@@ -1,0 +1,1316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container, .section, .image-container9 {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 공통 요소 가로 제한 */
+body, html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+
+/*배경 이미지*/
+body {
+  background-image: url("../img/onetwotree.png"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 글자 */
+.text-overlay {   
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: black;
+}
+
+/* 배송중... */
+.text-overlay h1 {   
+  font-size: 24vw;
+  line-height: 1.2;
+}
+
+/* 하루가 도착했습니다. */
+.text-overlay .bottom-text {  
+  margin-top: 135vh;
+  text-align: left;
+  font-size: 15vw;
+  font-weight: bold;
+  line-height: 1.2; /* 문장끼리의 넓이 */
+  letter-spacing: 1.2vw; /* 글 사이사이 넓이 */
+}
+
+/* 주문하시겠습니까? */
+.middle-text {  
+  margin-top: -2964vh; 
+  font-size: 2.7vw; 
+  color: #222;
+  font-weight: bold; 
+  text-align: center; /* 글 정렬 */
+  letter-spacing: 0.3vw;
+}
+
+/* 전체 버튼 */
+.order-button {   
+  margin-top: 8.3vh;
+  text-align: center;
+}
+
+/* 버튼 기본 스타일 */
+.order-btn {     
+  position: relative;
+  overflow: hidden;
+  font-size: 2.7vw;
+  padding: 3.2vw 12vw;
+  background-color: #ffd500;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50vw;
+  box-shadow: 0 0.9vw 0 #efb514;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover 효과 */
+.order-btn:hover {      
+  transform: scale(1.03);  /* 약간 커짐 */
+}
+
+/* 클릭(누름) 효과 + 그림자 강조 */
+.order-btn:active {     
+  transform: scale(0.99);  /* 살짝 작아짐 */
+  box-shadow: 0 0 1vw #ffd500, 0 0 2vw #ffd500;
+}
+
+/* 텍스트 스타일 */
+.order-btn span {     
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s, transform 0.3s;
+  white-space: nowrap;
+  color: white;
+}
+
+.default-text {
+  top: 28%;
+  transform: translate(-50%, -50%);
+}
+
+.clicked-text {
+  top: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+}
+
+/* 클릭하면 텍스트 전환 */
+.order-btn:active .default-text {    
+  opacity: 0;
+  transform: translate(-50%, -150%);
+}
+
+.order-btn:active .clicked-text {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+/*전체 배송조회*/
+.tracking-container { 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 72vh;
+}
+
+/*배송조회*/
+.tracking-box {   
+  display: flex;
+  align-items: center;
+  border: 8px solid #ffd500; /* 진한 노랑 테두리 */
+  border-radius: 50px;
+  padding: 2.5vh 3vw;
+  width: 70vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 0.4vw;
+}
+
+/* 돋보기,배송조회 간격 조절 */
+.tracking-box img {
+  margin-right: 2vw; 
+}
+
+/* 깜빡애니메이션 */
+.cursor {   
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 송장번호 테두리 */
+.info-box { 
+  border: 2.5px dashed #ffd500;     /* 노란 점선 테두리 */
+  border-radius: 50px;       
+  padding: 2vh 12vw;           
+  margin: 11vh auto;          
+  width: 47vw;                    
+  text-align: center;             
+  font-size: 1.6vw;              
+  font-weight: 400;            
+  color: black;    
+  z-index: 1000;       /* 위로 올림*/
+  position: relative;              
+}
+
+/* 번호얇기 */
+.thin {    
+  font-weight: 400; 
+}
+
+/* 받는분 */
+.info-box.small {   
+  width: 35vw;
+  font-size: 1.5vw;
+}
+
+/*-------------------------------------------------------------*/
+
+/* 주문접수완료 */
+.timeline {  
+  position: relative;
+  width: 90%;
+  margin: 75vh auto;
+}
+
+/* 체크배경 원*/
+.step {   
+  position: relative;
+  padding-left: 95px;
+}
+
+/* 체크 */
+.icon {      
+  position: absolute;
+  left: 80px;  
+  top: -15px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffd500;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 실선 */
+.solid-line {  
+  position: absolute;
+  left: 137px;     
+  top: 126px;         
+  width: 7.5px;
+  height: 144px;   
+  background-color: #a36a0b; 
+}
+
+/* 점선 */
+.line {    
+  position: absolute;
+  left: 137px;
+  top: 280px;
+  width: 4px;
+  height: 497px;
+  border-left: 6.5px dashed #a36a0b;
+}
+
+.content h2 {
+  font-size: 57px;
+  font-weight: bold;
+  margin-bottom: 10vh;
+  margin-left: 178px;
+  letter-spacing: 0.2vw 
+}
+
+/* 활동내역 배경 타원 */
+.bubble {     
+  display: inline-block;
+  padding:0.25em 3.3em;
+  background-color: #ffd500;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  margin: 4vh 0;
+  font-size: 38px;
+}
+
+.bubble.left {
+  margin-left: 190px;
+  transform: translate( 0 , 31px);
+}
+
+.bubble.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-20px , 100px);
+}
+
+/* 열린박스 */
+.timeline img {   
+  position: absolute;  
+  transform: translate(-645px , 635px);
+}
+
+/*...*/
+.dots {                 
+  position: absolute; 
+  top: 720%;
+  right: 50%; 
+  transform: translateY(-50%);
+}
+
+.dots span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #f4b900; 
+  line-height: 0.4;
+}
+
+/* 주문접수완료 이미지 */
+.image-container {  
+  display: flex;
+  justify-content: center;
+  gap: 9vw;
+  margin-top: 120vh;
+}
+
+.image-container img {
+  width: 40vw;
+  box-shadow: 35px 35px 0 #f4b900;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0px; /* 각지게 */
+  position: relative;
+}
+
+.image-container img:hover {
+  transform: scale(1.05) translateY(-26px); /* 커지면서 살짝 위로 */
+  box-shadow: 15px 15px 0 #f4b900;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------------------*/
+
+.time2line {  /* 상품포장중 */
+   position: relative;
+   width: 90%;
+   margin: 75vh auto;
+}
+
+/* 체크배경 원*/
+.step2 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+/*체크*/
+.icon2 {      
+  position: absolute;
+  left: 80px;  
+  top: -15px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffffff;
+  color: #ffd500;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*실선*/
+.solid-line2 {  
+  position: absolute;
+  left: 137px;     
+  top: 126px;         
+  width: 7.5px;
+  height: 520px;   
+  background-color: #a36a0b; 
+}
+
+/*점선*/
+.line2 {    
+  position: absolute;
+  left: 137px;
+  top: 660px;
+  width: 4px;
+  height: 120px;
+  border-left: 6.5px dashed #a36a0b;
+}
+
+.content2 h2 {
+  font-size: 57px;
+  font-weight: bold;
+  margin-bottom: 10vh;
+  margin-left: 178px;
+  letter-spacing: 0.2vw 
+}
+
+/*활동내역 배경 타원*/
+.bubble2 {     
+  display: inline-block;
+  padding:0.25em 3.3em;
+  background-color: #ffffff;
+  border-radius: 30px;
+  color: #ffd500;
+  font-weight: bold;
+  margin: 4vh 0;
+  font-size: 38px;
+}
+
+.bubble2.left {
+  margin-left: 190px;
+  transform: translate( 0 , 31px);
+}
+
+.bubble2.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(10px , 164px);
+}
+
+.bubble2.right2 {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-100px , 210px);
+}
+
+/* 박스22 */
+.time2line img {   
+  position: absolute;  
+  transform: translate(-575px , 645px);
+}
+
+/*...*/
+.dots2 {                 
+  position: absolute; 
+  top: 1045%;
+  right: 50%; 
+  transform: translateY(-50%);
+}
+
+.dots2 span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #ffffff; 
+  line-height: 0.4;
+}
+
+/*상품포장중 이미지*/
+.image-container2 {  
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+  margin-top: 133vh;
+}
+
+.image-container2 img {
+  width: 550px;               /* 가로만 고정 */
+  height: 450px;              /* 세로도 고정하고 싶을 경우 명시 */
+  object-fit: cover;
+  box-shadow: 25px 25px 0 #f4b900;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0px; /* 각지게 */
+  position: relative;
+}
+
+.image-container2 img:hover {
+  transform: scale(1.05) translateY(-26px); /* 커지면서 살짝 위로 */
+  box-shadow: 15px 15px 0 #f4b900;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 원하는 만큼 내리기 */
+.spacer {
+  height: 1150px; 
+}
+
+/* 배송 출발 상태 표시 */
+.section .status {      
+ display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 57px;
+  font-weight: bold;
+  margin-left: 348px;
+  margin-bottom: 10vh;
+  letter-spacing: 0.2vw 
+}
+
+/* 체크배경 원*/
+.step3 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+.icon3 {
+  position: absolute;
+  left: 157px;  
+  top: -175px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffd500;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 배송 라인 구성 */
+ .delivery-line {    
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+ .box333-img {
+  transform: translateX(260px);
+  margin-top: 63px;
+ }
+
+ .truck-img {
+  transform: translateX(740px);
+  margin-top: 63px;
+ }
+
+ /*...*/
+ .dots3 {
+  font-size: 128px;
+  color: #fecd4d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ .school {
+  font-size: 27px;
+  color: #fecd4d;
+  right: 21%;
+  top: 50%;
+  transform: translate(272%,-899%);
+}
+
+ .truck-group {
+  position: relative;
+  animation: shakeThenMove 4s ease-in-out infinite; /* ← 무한 반복 */
+  will-change: transform, opacity;
+}
+
+@keyframes shakeThenMove {     /* 흔들 → 쓩 애니메이션 */
+   0%   { transform: translateX(0); opacity: 1; }
+   10%  { transform: translateX(-8px); }
+   20%  { transform: translateX(8px); }
+   30%  { transform: translateX(-8px); }
+   40%  { transform: translateX(8px); }
+   50%  { transform: translateX(0); }
+   60%  { transform: translateX(200px); }
+   70%  { transform: translateX(1000px); opacity: 1; }
+   71%  { opacity: 0; } /* 갑자기 사라지기 */
+   72%  { transform: translateX(-1000px); opacity: 0; } /* 왼쪽에서 리셋 */
+   85%  { transform: translateX(0); opacity: 0.6; } /* 부드럽게 이동 중 */
+   100% { transform: translateX(0); opacity: 1; } /* 다음 루프 준비 */
+}
+
+/* 이미지 스택: 겹쳐서 보이기 */
+.image-stack {
+position: relative;
+width: fit-content;
+padding-top: 63px;
+margin: 0 auto;
+}
+
+.img-wrapper {
+position: relative;
+display: inline-block;
+margin-right: -40px; /* 겹치기 위한 간격 */
+z-index: 1;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-wrapper.second {
+z-index: 2;
+top: 30px;
+}
+
+/* 노란 배경 그림자 */
+.img-wrapper::before {
+content: "";
+position: absolute;
+top: 10px;
+left: 15px;
+width: 100%;
+height: 100%;
+background-color: #fecd4d;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+transform: scale(1.03);
+z-index: -1;
+}
+
+/* 이미지 크기와 호버 효과 */
+.img-wrapper img {
+width: 420px; /* 기존보다 크게 */
+height: auto;
+transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+/* 서브웨이 이미지만 정사각형으로 자르기 */
+.img-wrapper:first-child img {
+height: 320px; /* width와 동일하게 맞춤 */
+object-fit: cover; /* 정사각형 안에 꽉 채우기 */
+object-position: center;
+}
+
+.img-wrapper:hover img {
+transform: scale(1.01) translateY(-30px);
+filter: brightness(1.1);
+}
+
+.img-wrapper:hover::before {
+transform: scale(1.01) translateY(-30px);
+}
+
+/*--------------------------------------------------------------------------*/
+
+/*배송지연*/
+.time4line {  
+  position: relative;
+  width: 90%;
+  margin: 70vh auto;
+}
+
+/* 체크배경 원*/
+.step4 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+/*체크*/
+.icon4 {      
+  position: absolute;
+  left: 80px;  
+  top: -15px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ff3300;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*실선*/
+.solid-line4 {  
+  position: absolute;
+  left: 137px;     
+  top: 126px;         
+  width: 7.5px;
+  height: 144px;   
+  background-color: #a36a0b; 
+}
+
+/*점선*/
+.line4 {    
+  position: absolute;
+  left: 137px;
+  top: 280px;
+  width: 4px;
+  height: 215px;
+  border-left: 6.5px dashed #a36a0b;
+}
+
+@keyframes blinkBubble {
+ 0% { background-color: #ffd500; }
+ 50% { background-color: #ff3300; }
+ 100% { background-color: #ffd500; }
+}
+
+.bubble4.blink {
+  animation: blinkBubble 1s infinite;
+}
+
+.content4 h2 {
+  font-size: 57px;
+  font-weight: bold;
+  margin-bottom: 10vh;
+  margin-left: 178px;
+  letter-spacing: 0.2vw 
+}
+
+/*활동내역 배경 타원*/
+.bubble4 {     
+  display: inline-block;
+  padding:0.25em 3.3em;
+  background-color: #ffd500;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  margin: 4.5vh 0;
+  font-size: 38px;
+}
+
+.bubble4.left {
+  margin-left: 190px;
+  transform: translate( 0 , 31px);
+}
+
+.bubble4.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-20px , 185px);
+}
+
+/* 살짝열린박스 */
+.time4line img {   
+  position: absolute;  
+  transform: translate(-590px , 380px);
+}
+
+/*...*/
+.dots4 {                 
+  position: absolute; 
+  top: 1560%;
+  left: 50%; 
+  transform: translate(-50%,-50%);
+}
+
+.dots4 span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #ffd500; 
+  line-height: 0.4;
+  animation: blink-color 1s infinite alternate;
+}
+
+/* 애니메이션 */
+@keyframes blink-color {
+ 0% {color: #ffd500;}
+ 50% {color: #ff3300}
+100% {color: #ffd500;}
+}
+
+/*-------------------------------------------------------*/
+
+/* - 원 */
+.circle-stack {
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 270px; /* 원 사이 간격 */
+  margin-top: 30px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #f15a24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* 점점 작아지는 원모양 */
+.circle.smaller {
+  width: 85px;
+  height: 85px;
+  background-color: #f7931e;
+}
+
+.circle.small {
+  width: 75px;
+  height: 75px;
+  background-color: #fbb03b;
+}
+
+.circle.smallest {
+  width: 65px;
+  height: 65px;
+  background-color: #fcdc49;
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 원하는 만큼 내리기 */
+.spacer5 {
+  height: 1150px; 
+}
+
+/* 배송 중 상태 표시 */
+.section5 .status5 {      
+ display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 57px;
+  font-weight: bold;
+  margin-left: 348px;
+  margin-bottom: 10vh;
+  letter-spacing: 0.2vw 
+}
+
+/* 체크배경 원*/
+.step5 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+.icon5 {
+  position: absolute;
+  left: 157px;  
+  top: -175px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffffff;
+  color: #ffd500;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 배송 라인 구성 */
+.delivery-line5 {    
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+ .box55555-img {
+  transform: translateX(260px);
+  margin-top: 63px;
+ }
+
+ .truck5-img {
+  margin-left: 740px;
+  margin-top: 63px;
+ }
+
+ /*...*/
+ .dots5 {
+  font-size: 128px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ .home5 {
+  font-size: 27px;
+  color: #ffffff;
+  right: 21%;
+  top: 50%;
+  transform: translate(80%, -910%);
+}
+
+ .truck-group5 {
+  position: relative;
+  animation: shakeThenMove2 4s ease-in-out infinite; /* ← 무한 반복 */
+  will-change: transform, opacity;
+}
+
+@keyframes shakeThenMove2 {
+   0%   { transform: translateX(0); opacity: 1; }
+  10%  { transform: translateX(-8px); }
+   20%  { transform: translateX(8px); }
+   30%  { transform: translateX(-8px); }
+   40%  { transform: translateX(8px); }
+   50%  { transform: translateX(0); }
+   60%  { transform: translateX(200px); }
+   70%  { transform: translateX(1000px); opacity: 1; }
+   71%  { opacity: 0; } /* 갑자기 사라지기 */
+   72%  { transform: translateX(-1000px); opacity: 0; } /* 왼쪽에서 리셋 */
+   85%  { transform: translateX(0); opacity: 0.6; } /* 부드럽게 이동 중 */
+   100% { transform: translateX(0); opacity: 1; } /* 다음 루프 준비 */
+ }
+
+/* 이미지 스택: 겹쳐서 보이기 */
+.image-stack5 {
+position: relative;
+width: fit-content;
+padding-top: 63px;
+margin: 0 auto;
+}
+
+.img-wrapper5 {
+position: relative;
+display: inline-block;
+margin-right: -35px; /* 겹치기 위한 간격 */
+margin-bottom: -150px;
+z-index: 1;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-wrapper5.second {
+z-index: 2;
+top: 30px;
+}
+
+/* 노란 배경 그림자 */
+.img-wrapper5::before {
+content: "";
+position: absolute;
+top: 10px;
+left: 15px;
+width: 100%;
+height: 100%;
+background-color: #db9d00;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+transform: scale(1.03);
+z-index: -1;
+}
+
+/* 이미지 크기와 호버 효과 */
+.img-wrapper5 img {
+width: 420px; /* 기존보다 크게 */
+height: auto;
+transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+/* 서브웨이 이미지만 정사각형으로 자르기 */
+.img-wrapper5:first-child img {
+  width: 320px;
+  height: 320px;
+ object-fit: cover; /* 정사각형 안에 꽉 채우기 */
+ object-position: center;
+}
+
+.img-wrapper5:nth-child(2) img {
+width: 320px;
+height: 320px;
+object-fit: cover;
+object-position: center;
+}
+
+.img-wrapper5:hover img {
+transform: scale(1.01) translateY(-30px);
+filter: brightness(1.1);
+}
+
+.img-wrapper5:hover::before {
+transform: scale(1.01) translateY(-30px);
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 곧 도착예정 */
+.arriving-soon {
+  text-align: center;
+  font-size: 64px;
+  font-weight: bold;
+  color: #f4b900;
+  animation: bounceText 1s infinite ease-in-out;
+  margin-top: 775px;
+}
+
+/* 또잉또잉 애니메이션 */
+@keyframes bounceText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(8px);
+  }
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 원하는 만큼 내리기 */
+.spacer6 {
+  height: 1240px; 
+}
+
+/* 배송 중 상태 표시 */
+.section6 .status6 {      
+ display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 57px;
+  font-weight: bold;
+  margin-left: 348px;
+  margin-bottom: 10vh;
+  letter-spacing: 0.2vw 
+}
+
+/* 체크배경 원*/
+.step6 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+.icon6 {
+  position: absolute;
+  left: 157px;  
+  top: -175px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffd500;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box666666-img {
+  display: block;
+  margin: 0 auto 0;
+  transform: translateY(13px);
+ }
+
+ /*...*/
+.dots6 {                 
+  position: absolute; 
+  top: 2364%;
+  right: 49%; 
+  transform: translateY(-50%,50%);
+}
+
+.dots6 span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #ffd500; 
+  line-height: 0.4;
+}
+
+/*활동내역 배경 타원*/
+.bubble6 {  
+  position: relative;
+  top: 130px;   
+  display: inline-block;
+  padding:10px 125px;
+  background-color: #ffd500;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  margin: 40px 0;
+  font-size: 38px;
+}
+
+.bubble6.left {
+  margin-left: 190px;
+  transform: translate(75px, 690px);
+}
+
+.bubble6.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-75px , 810px);
+}
+
+/*-------------------------------------------------------------------*/
+
+/*...*/
+.dots7 {                 
+  position: absolute; 
+  top: 2482%;
+  right: 49%; 
+  transform: translateY(-50%,50%);
+}
+
+.dots7 span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #ffffff; 
+  line-height: 0.4;
+}
+
+/*활동내역 배경 타원*/
+.bubble7 {
+  position: relative;
+  top: 45px;  /* 위에서 80px 내려줌 */
+  display: inline-block;
+  padding: 10px 125px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  color: #ffd500;
+  font-weight: bold;
+  margin: 40px 0;
+  font-size: 38px;
+}
+
+.bubble7.left {
+  margin-left: 190px;
+  transform: translate( 90px , 31px);
+  margin-top: 820px;
+}
+
+.bubble7.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-90px , 174px);
+  margin-top: 820px;
+}
+
+.bubble7.right2 {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-410px , 175px);
+  margin-top: 103px;
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 이미지*/
+.image-container8 {  
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+  margin-top: 93vh;
+}
+
+.image-container8 img {
+  width: 365px;               /* 가로만 고정 */
+  height: 265px;              /* 세로도 고정하고 싶을 경우 명시 */
+  object-fit: cover;
+  box-shadow: 25px 25px 0 #f4b900;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0px; /* 각지게 */
+  position: relative;
+}
+
+.image-container8 img:hover {
+  transform: scale(1.05) translateY(-26px); /* 커지면서 살짝 위로 */
+  box-shadow: 15px 15px 0 #f4b900;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------------------------*/
+
+/* 원하는 만큼 내리기 */
+.spacer9 {
+  height: 660px; 
+}
+
+/* 배송 완료 상태 표시 */
+.section9 .status9 {      
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 58px;
+  font-weight: bold;
+  margin-left: 348px;
+  margin-bottom: 10vh;
+  letter-spacing: 0.2vw 
+}
+
+/* 체크배경 원*/
+.step9 {   
+  position: relative;
+  padding-left: 95px;
+}
+
+.icon9 {
+  position: absolute;
+  left: 157px;  
+  top: -175px;
+  transform: translateY(-9px);
+  width: 123px;
+  height: 123px;
+  background-color: #ffd500;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container9 {
+  position: relative;
+  height: 100vh; /* 화면 높이만큼 */
+ }
+.box7777777-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -230%);
+}
+
+/*...*/
+.dots9 {                 
+  position: absolute; 
+  top: 2777%;
+  right: 49%; 
+  transform: translateY(-50%,50%);
+}
+
+.dots9 span {
+  display: block;
+  font-size: 128px; /* 크기 조절 */
+  color: #ffd500; 
+  line-height: 0.4;
+}
+
+/*활동내역 배경 타원*/
+.bubble9 {     
+  display: inline-block;
+  padding:9.5px 125px;
+  background-color: #ffd500;
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 40px 0;
+  font-size: 38px;
+}
+
+.bubble9.left {
+  margin-left: 190px;
+  transform: translate( 90px , 20px);
+  margin-top: 670px;
+}
+
+.bubble9.right {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-90px , 155px);
+  margin-top: 670px;
+}
+
+.bubble9.right2 {
+  float: right;
+  margin-right: 235px;
+  transform: translate(-410px , 152px);
+  margin-top: 73px;
+}
+
+/*이미지*/
+.image-container9 {  
+  display: flex;
+  justify-content: center;
+  gap: 8vw;
+  margin-top: -30vh;
+  margin-left: -3vw;
+}
+
+.image-container9 img {
+  width: 32vw;
+  height: 540px;            /* 원하는 세로 크기로 설정*/
+  object-fit: cover;
+  box-shadow: 35px 35px 0 #f4b900;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0px; /* 각지게 */
+  position: relative;
+}
+
+.image-container9 img:hover {
+  transform: scale(1.05) translateY(-26px); /* 커지면서 살짝 위로 */
+  box-shadow: 15px 15px 0 #f4b900;
+  cursor: pointer;
+}
+
+/*-------------------------------------------------------------------*/
+
+.return-section10 {
+  min-height: 100vh;   /* 전체 화면 높이만큼 최소 확보 */
+  padding: 900px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  color: #000;
+  text-align: center;
+  position: relative;
+}
+
+/*반품접수중*/
+.return-text10 p {
+  font-weight: 900;
+  font-size: 168px;
+  line-height: 2;
+  align-items: center;
+  margin: -80px 0 0 0;
+}
+
+/*...*/
+.dots10 {
+  font-size: 40px;
+  margin: 30px 0;
+}
+
+/*반품완료*/
+.complete10 {
+  transform: scale(0.22); 
+  transform-origin: top;
+  position: relative;
+  top: 330px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/*내일 다시주문해주세요*/
+.complete11 {
+  transform: scale(0.22); 
+  transform-origin: top;
+  position: relative;
+  top: 180px; /* 내려주는 부분 */
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 디지털 미디어 디자인*/
+.footer10 {
+  position: absolute;
+  bottom: 40px;
+  font-size: 19px;
+  letter-spacing: 2px;
+  font-family: 'Pretendard', sans-serif;
+}
